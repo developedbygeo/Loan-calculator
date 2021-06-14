@@ -1,0 +1,94 @@
+main {
+  height: 100vh;
+  display: grid;
+  grid:
+    ". header header ." 35rem
+    ". input output ." auto
+    ". . . ." 1fr/
+    1fr minmax(0, 1fr) minmax(0, 1fr) 1fr;
+  gap: 4rem;
+}
+.logo {
+  height: 35rem;
+  text-align: center;
+  grid-area: header;
+  img {
+    height: 35rem;
+  }
+}
+.inputs {
+  grid-area: input;
+  @include flex(flex-start, center, column);
+  background: rgba($color: $jet, $alpha: 0.05);
+  border-radius: 2rem;
+}
+.outputs {
+  grid-area: output;
+  text-align: center;
+  border-radius: 2rem;
+  @include flex(flex-start, center, column);
+}
+
+.principal,
+.interest {
+  width: 100%;
+  @include flex(space-between, center, row);
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.monthly {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 10rem;
+  @include flex(flex-start, center, column);
+  p {
+    font-size: 3rem;
+    font-family: "Crimson Text", serif;
+    margin-top: 5rem;
+  }
+}
+.amount {
+  margin-top: 2rem;
+}
+
+.field {
+  @include flex(flex-start, center, column);
+  input {
+    order: 2;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    transition: all 100ms ease;
+  }
+  input:focus {
+    -webkit-box-shadow: 8px 6px 15px -5px rgba(0, 0, 0, 0.52);
+    box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
+    transform: scale(1.03);
+  }
+  label {
+    padding: 1rem 1.5rem;
+    order: 1;
+  }
+}
+
+.calculate {
+  width: 100%;
+  padding: 3rem;
+  @include flex(center, center, row);
+  button {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    -webkit-box-shadow: 8px 6px 15px -5px rgba(0, 0, 0, 0.52);
+    box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
+    transition: all 100ms ease;
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+}

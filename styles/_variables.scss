@@ -1,0 +1,12 @@
+$jet: #353535;
+$gray: #d9d9d9;
+$white: #ffffff;
+$ming: #3c6e71;
+$indigo: #284b63;
+
+@mixin flex($justify, $align, $dir) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $dir;
+}

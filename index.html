@@ -3,13 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:ital,wght@0,300;1,800&display=swap"
       rel="stylesheet"
     />
-    <title>Loan Calculator | Interest Made Easy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Loan Calculator | Interest made easy</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="logo">
+        <img src="./img/logo.png" alt="logo" />
+      </div>
+      <div class="inputs">
+        <div class="amount field">
+          <input
+            type="text"
+            inputmode="numeric"
+            name="amount"
+            id="amount"
+            class="sum"
+            min="0"
+            required
+          />
+          <label for="amount">Loan Amount</label>
+        </div>
+        <div class="term field">
+          <input
+            type="text"
+            inputmode="numeric"
+            name="term"
+            id="term"
+            class="sum"
+            min="0"
+            required
+          />
+          <label for="term">Loan term in years</label>
+        </div>
+        <div class="interest-rate field">
+          <input
+            type="text"
+            inputmode="numeric"
+            name="interest"
+            id="interest"
+            class="sum"
+            min="0"
+            required
+          />
+          <label for="interest">Interest rate per year</label>
+          <button type="submit" class="calculate-button">Calculate</button>
+        </div>
+      </div>
+      <div class="outputs">
+        <div class="monthly">
+          <h2>Monthly Payment</h2>
+          <p class="monthly-payment">$100</p>
+        </div>
+        <div class="interest">
+          <h3>Total Interest Paid</h3>
+          <p class="interest-sum sum">$201.23</p>
+        </div>
+        <div class="principal">
+          <h3>Total Principal Paid</h3>
+          <p class="principal-sum sum">$5000</p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
