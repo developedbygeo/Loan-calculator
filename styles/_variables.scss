@@ -10,3 +10,7 @@ $indigo: #284b63;
   align-items: $align;
   flex-direction: $dir;
 }
+
+:export {
+  indigoColor: $indigo;
+}

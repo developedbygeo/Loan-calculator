@@ -16,8 +16,10 @@ main {
     height: 35rem;
   }
 }
-.inputs {
+form {
   grid-area: input;
+}
+.inputs {
   @include flex(flex-start, center, column);
   background: rgba($color: $jet, $alpha: 0.05);
   border-radius: 2rem;
