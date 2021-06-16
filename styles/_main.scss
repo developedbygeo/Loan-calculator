@@ -2,12 +2,13 @@ main {
   height: 100vh;
   display: grid;
   grid:
-    ". header header ." 35rem
-    ". input output ." auto
-    ". . . ." 1fr/
+    ". header header ." 1fr
+    ". input output ." 1fr
+    ". footer footer ." 1fr/
     1fr minmax(0, 1fr) minmax(0, 1fr) 1fr;
   gap: 4rem;
 }
+
 .logo {
   height: 35rem;
   text-align: center;
@@ -23,21 +24,28 @@ form {
   @include flex(flex-start, center, column);
   background: rgba($color: $jet, $alpha: 0.05);
   border-radius: 2rem;
+  padding: 2rem;
 }
 .outputs {
   grid-area: output;
   text-align: center;
   border-radius: 2rem;
   @include flex(flex-start, center, column);
+  padding: 2rem;
 }
 
 .principal,
 .interest {
   width: 100%;
   @include flex(space-between, center, row);
+  flex-wrap: wrap;
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
+}
+.interest-sum,
+.principal-sum {
+  font-size: 1.5rem;
 }
 
 .monthly {
@@ -81,16 +89,23 @@ form {
   width: 100%;
   padding: 3rem;
   @include flex(center, center, row);
-  button {
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    font-size: 1.4rem;
-    -webkit-box-shadow: 8px 6px 15px -5px rgba(0, 0, 0, 0.52);
-    box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
-    transition: all 100ms ease;
-  }
-  button:hover {
-    transform: scale(1.05);
-  }
+}
+
+.calculate-button {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+
+  transition: all 100ms ease;
+}
+.calculate-button:hover {
+  transform: scale(1.05);
+  -webkit-box-shadow: 8px 6px 15px -5px rgba(0, 0, 0, 0.52);
+  box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
+}
+.info {
+  grid-area: footer;
+  text-align: center;
+  font-size: 1.1rem;
 }

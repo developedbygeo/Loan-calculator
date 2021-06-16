@@ -22,10 +22,14 @@ body {
   font-family: "Crimson Text", serif;
 }
 
+h3 {
+  font-size: 1.6rem;
+}
+
 main {
   height: 100vh;
   display: grid;
-  grid: ". header header ." 35rem ". input output ." auto ". . . ." 1fr/1fr minmax(0, 1fr) minmax(0, 1fr) 1fr;
+  grid: ". header header ." 1fr ". input output ." 1fr ". footer footer ." 1fr/1fr minmax(0, 1fr) minmax(0, 1fr) 1fr;
   gap: 4rem;
 }
 
@@ -50,6 +54,7 @@ form {
   flex-direction: column;
   background: rgba(53, 53, 53, 0.05);
   border-radius: 2rem;
+  padding: 2rem;
 }
 
 .outputs {
@@ -60,6 +65,7 @@ form {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .principal,
@@ -69,11 +75,17 @@ form {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .principal h3,
 .interest h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+}
+
+.interest-sum,
+.principal-sum {
+  font-size: 1.5rem;
 }
 
 .monthly {
@@ -132,16 +144,22 @@ form {
   flex-direction: row;
 }
 
-.calculate button {
+.calculate-button {
   border: none;
   padding: 1rem 2rem;
   border-radius: 1rem;
   font-size: 1.4rem;
-  box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
   transition: all 100ms ease;
 }
 
-.calculate button:hover {
+.calculate-button:hover {
   transform: scale(1.05);
+  box-shadow: 8px 6px 15px -8px rgba(0, 0, 0, 0.52);
+}
+
+.info {
+  grid-area: footer;
+  text-align: center;
+  font-size: 1.1rem;
 }
 /*# sourceMappingURL=style.css.map */
