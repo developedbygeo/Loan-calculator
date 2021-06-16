@@ -7,31 +7,44 @@ const loanAmount = document.querySelector(".loan-amount");
 const loanTerm = document.querySelector(".loan-term");
 const loanInterest = document.querySelector(".loan-interest");
 // Calculations
-const convertedInterest = parseFloat(loanInterest.value);
-const convertedTerm = parseFloat(loanTerm.value * 12);
+const convertedInterest = parseFloat(loanInterest.value) / 100 / 12;
+const convertedTerm = parseFloat(loanTerm.value) * 12;
 const convertedLoan = parseFloat(loanAmount.value);
 
 calculateBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  calculateMonthlyPayment();
-  calculateTotalInterest();
+  const numbers = /^\d+\.?\d{0,2}$/g;
+  if (
+    loanAmount.value.match(numbers) &&
+    loanTerm.value.match(numbers) &&
+    loanInterest.value.match(numbers)
+  ) {
+    calculateMonthlyPayment();
+    calculateTotalInterest();
+  } else {
+    alert("Please provide solely numeric values");
+  }
 });
 
 function calculateMonthlyPayment() {
-  const interestToPaymentsRatio = convertedInterest / 100 / convertedTerm;
-  const actualMonthlyInterest = interestToPaymentsRatio * convertedLoan;
-  const fixedMonthlyPayment = convertedLoan / convertedTerm;
-  const actualTotal =
-    Math.round((fixedMonthlyPayment + actualMonthlyInterest) * 100) / 100;
-  monthlyPayment.innerText = `$ ${actualTotal}`;
+  const powers = Math.pow(1 + convertedInterest, convertedTerm);
+  const monthlyLoanPayment =
+    (convertedLoan * powers * convertedInterest) / (powers - 1);
+  const totalInterest = (
+    monthlyLoanPayment * convertedTerm -
+    convertedLoan
+  ).toFixed(2);
+  monthlyPayment.innerText = `$ ${monthlyLoanPayment.toFixed(2)}`;
   monthlyPayment.style.color = "#284b63";
+  principalPaid.innerText = `$ ${convertedLoan}`;
+  principalPaid.style.color = "#284b63";
+  interestPaid.innerText = `$ ${totalInterest}`;
 }
 
 function calculateTotalInterest() {
-  const totalInterest =
-    Math.round(
-      convertedLoan * (convertedInterest / 100) * (convertedTerm / 12) * 100
-    ) / 100;
-  interestPaid.innerText = `$ ${totalInterest}`;
-  interestPaid.style.color = "#284b63";
+  const adjustedInterest = convertedInterest / 100;
+  const interestToPayments = adjustedInterest / convertedTerm;
+  const totalMonthlyInterest = interestToPayments * convertedLoan;
+  const totalAmountOfInterest =
+    Math.round(totalMonthlyInterest * convertedTerm * 100) / 100;
 }
