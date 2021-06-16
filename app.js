@@ -6,21 +6,32 @@ const calculateBtn = document.querySelector(".calculate-button");
 const loanAmount = document.querySelector(".loan-amount");
 const loanTerm = document.querySelector(".loan-term");
 const loanInterest = document.querySelector(".loan-interest");
-// Calculations
+let valueArray = [];
 
 calculateBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const numbers = /^\d+\.?\d{0,2}$/g;
-  if (
-    loanAmount.value.match(numbers) &&
-    loanTerm.value.match(numbers) &&
-    loanInterest.value.match(numbers)
-  ) {
-    calculate();
-  } else {
-    alert("Please provide solely numeric values");
-  }
+  check();
+  calculate();
 });
+
+function check() {
+  const numbers = /^\d+\.?\d{0,2}$/g;
+  valueArray = [loanAmount, loanTerm, loanInterest];
+  valueArray.forEach((element) => {
+    const field = element;
+    const value = element.value;
+    if (value.match(numbers)) {
+      valueArray = [];
+      field.style.border = "";
+    } else {
+      field.style.border = "1px solid red";
+      valueArray = [];
+      alert(
+        `Please fill in the ${field.parentElement.innerText} field with a number`
+      );
+    }
+  });
+}
 
 function calculate() {
   const convertedInterest = parseFloat(loanInterest.value) / 100 / 12;
@@ -39,4 +50,5 @@ function calculate() {
   totalSumPaid.innerText = `$ ${totalSum}`;
   totalSumPaid.style.color = "#284b63";
   interestPaid.innerText = `$ ${totalInterest}`;
+  interestPaid.style.color = "#284b63";
 }
