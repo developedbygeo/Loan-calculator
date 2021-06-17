@@ -6,6 +6,7 @@ const calculateBtn = document.querySelector(".calculate-button");
 const loanAmount = document.querySelector(".loan-amount");
 const loanTerm = document.querySelector(".loan-term");
 const loanInterest = document.querySelector(".loan-interest");
+const errorMsg = document.querySelectorAll(".error");
 let valueArray = [];
 
 calculateBtn.addEventListener("click", (e) => {
@@ -20,15 +21,17 @@ function check() {
   valueArray.forEach((element) => {
     const field = element;
     const value = element.value;
+    const parentElement = element.parentElement;
+    const errorMsgDisplay = parentElement.children[0];
     if (value.match(numbers)) {
       valueArray = [];
       field.style.border = "";
+      errorMsgDisplay.style.display = "none";
     } else {
       field.style.border = "1px solid red";
       valueArray = [];
-      alert(
-        `Please fill in the ${field.parentElement.innerText} field with a number`
-      );
+      console.log(parentElement.children[0]);
+      errorMsgDisplay.style.display = "block";
     }
   });
 }
