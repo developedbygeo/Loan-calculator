@@ -1,0 +1,156 @@
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 45%;
+  }
+  body {
+    position: relative;
+  }
+  main {
+    grid:
+      "header header header header" 1fr "input input output output" 1fr "footer footer footer footer" 1fr/1fr minmax(
+        20rem,
+        1fr
+      )
+      minmax(20rem, 1fr) 1fr;
+    gap: 1rem;
+  }
+  input {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .logo {
+    height: 25rem;
+    img {
+      height: 25rem;
+    }
+  }
+  .field {
+    margin: 1.5rem 0rem;
+    label {
+      font-size: 1.4rem;
+      padding: 0;
+      margin-bottom: 0.8rem;
+    }
+  }
+  .monthly {
+    padding-bottom: 5rem;
+  }
+  .interest {
+    margin-bottom: 1.5rem;
+  }
+  .principal,
+  .interest {
+    justify-content: center;
+    flex-direction: column;
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+  .info {
+    position: absolute;
+    bottom: 0%;
+    p {
+      width: 95%;
+      margin: auto;
+      line-height: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 240px) {
+  html {
+    font-size: 41%;
+  }
+  main {
+    grid:
+      "header header" 1fr "input output" 1fr "footer footer" 1fr/1fr minmax(
+        25rem,
+        1fr
+      )
+      minmax(17rem, 1fr);
+    gap: 0.5rem;
+  }
+  .logo {
+    height: 8rem;
+    img {
+      height: 11rem;
+    }
+  }
+  .inputs,
+  .outputs {
+    padding-top: 0.2rem;
+  }
+  .inputs {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .outputs {
+    margin-top: 0;
+  }
+  .field {
+    margin: 1rem 0rem;
+    label {
+      font-size: 1.1rem;
+    }
+    input {
+      font-size: 1.5rem;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+  .monthly {
+    padding-bottom: 3rem;
+    margin-top: 1rem;
+    p {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+  .interest,
+  .principal {
+    margin: 1.5rem 0;
+  }
+  .info {
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      width: 100%;
+    }
+  }
+  .calculate-button {
+    padding: 0.2rem 1rem;
+  }
+  .error {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    position: relative;
+  }
+  .logo {
+    height: 30rem;
+    img {
+      height: 30rem;
+    }
+  }
+  main {
+    grid:
+      "header header header header" 1fr "input input output output" 1fr "footer footer footer footer" 1fr/1fr minmax(
+        0,
+        1fr
+      )
+      minmax(0, 1fr) 1fr;
+  }
+  .info {
+    p {
+      position: absolute;
+      bottom: 0%;
+    }
+  }
+}

@@ -15,15 +15,23 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
-  background: #d9d9d9;
+  background: #e0dede;
 }
 
 .sum {
   font-family: "Crimson Text", serif;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h3 {
   font-size: 1.6rem;
+}
+
+body {
+  position: relative;
 }
 
 main {
@@ -52,7 +60,7 @@ form {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background: rgba(53, 53, 53, 0.05);
+  background: rgba(53, 53, 53, 0.035);
   border-radius: 2rem;
   padding: 2rem;
 }
@@ -66,6 +74,7 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  background: rgba(53, 53, 53, 0.015);
 }
 
 .principal,
@@ -113,12 +122,12 @@ form {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .field input {
   order: 2;
   padding: 1rem 1.5rem;
-  margin-bottom: 2rem;
   border: none;
   border-radius: 1rem;
   outline: none;
@@ -133,6 +142,15 @@ form {
 .field label {
   padding: 1rem 1.5rem;
   order: 1;
+}
+
+.error {
+  display: none;
+  order: 3;
+  font-size: 1rem;
+  color: red;
+  margin-top: 0.5rem;
+  transition: all 200ms ease;
 }
 
 .calculate {
@@ -161,5 +179,149 @@ form {
   grid-area: footer;
   text-align: center;
   font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 45%;
+  }
+  body {
+    position: relative;
+  }
+  main {
+    grid: "header header header header" 1fr "input input output output" 1fr "footer footer footer footer" 1fr/1fr minmax(20rem, 1fr) minmax(20rem, 1fr) 1fr;
+    gap: 1rem;
+  }
+  input {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .logo {
+    height: 25rem;
+  }
+  .logo img {
+    height: 25rem;
+  }
+  .field {
+    margin: 1.5rem 0rem;
+  }
+  .field label {
+    font-size: 1.4rem;
+    padding: 0;
+    margin-bottom: 0.8rem;
+  }
+  .monthly {
+    padding-bottom: 5rem;
+  }
+  .interest {
+    margin-bottom: 1.5rem;
+  }
+  .principal,
+  .interest {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .principal h3,
+  .interest h3 {
+    margin-bottom: 1rem;
+  }
+  .info {
+    position: absolute;
+    bottom: 0%;
+  }
+  .info p {
+    width: 95%;
+    margin: auto;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  html {
+    font-size: 41%;
+  }
+  main {
+    grid: "header header" 1fr "input output" 1fr "footer footer" 1fr/1fr minmax(25rem, 1fr) minmax(17rem, 1fr);
+    gap: 0.5rem;
+  }
+  .logo {
+    height: 8rem;
+  }
+  .logo img {
+    height: 11rem;
+  }
+  .inputs,
+  .outputs {
+    padding-top: 0.2rem;
+  }
+  .inputs {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .outputs {
+    margin-top: 0;
+  }
+  .field {
+    margin: 1rem 0rem;
+  }
+  .field label {
+    font-size: 1.1rem;
+  }
+  .field input {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .monthly {
+    padding-bottom: 3rem;
+    margin-top: 1rem;
+  }
+  .monthly p {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .monthly h2 {
+    font-size: 1.6rem;
+  }
+  .monthly h3 {
+    font-size: 1.4rem;
+  }
+  .interest,
+  .principal {
+    margin: 1.5rem 0;
+  }
+  .info p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+  .calculate-button {
+    padding: 0.2rem 1rem;
+  }
+  .error {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    position: relative;
+  }
+  .logo {
+    height: 30rem;
+  }
+  .logo img {
+    height: 30rem;
+  }
+  main {
+    grid: "header header header header" 1fr "input input output output" 1fr "footer footer footer footer" 1fr/1fr minmax(0, 1fr) minmax(0, 1fr) 1fr;
+  }
+  .info p {
+    position: absolute;
+    bottom: 0%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
