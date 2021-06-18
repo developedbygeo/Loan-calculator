@@ -25,9 +25,13 @@ form {
 }
 .inputs {
   @include flex(flex-start, center, column);
-  background: rgba($color: $jet, $alpha: 0.035);
+  background: -webkit-linear-gradient(to left, #333536, #3e4042);
+  background: linear-gradient(to left, #333536, #3e4042);
   border-radius: 2rem;
   padding: 2rem;
+  label {
+    color: $isabelline;
+  }
 }
 .outputs {
   grid-area: output;
@@ -35,7 +39,9 @@ form {
   border-radius: 2rem;
   @include flex(flex-start, center, column);
   padding: 2rem;
-  background: rgba($color: $jet, $alpha: 0.06);
+  // background: rgba($color: $isabelline, $alpha: 0.025);
+  background: -webkit-linear-gradient(to right, #333536, #252729);
+  background: linear-gradient(to right, #333536, #252729);
 }
 
 .principal,
@@ -45,6 +51,7 @@ form {
   flex-wrap: wrap;
   h3 {
     font-size: 1.4rem;
+    color: $isabelline;
   }
 }
 .interest-sum,
@@ -57,10 +64,14 @@ form {
   padding-top: 1rem;
   padding-bottom: 10rem;
   @include flex(flex-start, center, column);
+
   p {
     font-size: 3rem;
     font-family: "Crimson Text", serif;
     margin-top: 5rem;
+  }
+  h2 {
+    color: $isabelline;
   }
 }
 .amount {
@@ -92,7 +103,8 @@ form {
   display: none;
   order: 3;
   font-size: 1rem;
-  color: red;
+  color: white;
+  text-decoration: underline;
   margin-top: 0.5rem;
   transition: all 200ms ease;
 }
@@ -121,4 +133,5 @@ form {
   text-align: center;
   font-size: 1.1rem;
   @include flex(center, center, row);
+  color: $isabelline;
 }
