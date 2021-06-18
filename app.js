@@ -13,6 +13,7 @@ calculateBtn.addEventListener("click", (e) => {
   e.preventDefault();
   check();
   calculate();
+  check();
 });
 
 function check() {
@@ -32,6 +33,10 @@ function check() {
       valueArray = [];
       console.log(parentElement.children[0]);
       errorMsgDisplay.style.display = "block";
+      monthlyPayment.innerText = "Error";
+      monthlyPayment.style.color = "#e63946";
+      interestPaid.innerText = "";
+      totalSumPaid.innerText = "";
     }
   });
 }
