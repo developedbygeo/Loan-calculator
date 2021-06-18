@@ -34,7 +34,7 @@ function check() {
       console.log(parentElement.children[0]);
       errorMsgDisplay.style.display = "block";
       monthlyPayment.innerText = "Error";
-      monthlyPayment.style.color = "#e63946";
+      monthlyPayment.style.color = "#F0EFEB";
       interestPaid.innerText = "";
       totalSumPaid.innerText = "";
     }
@@ -54,9 +54,9 @@ function calculate() {
   ).toFixed(2);
   const totalSum = (monthlyLoanPayment * convertedTerm).toFixed(2);
   monthlyPayment.innerText = `$ ${monthlyLoanPayment.toFixed(2)}`;
-  monthlyPayment.style.color = "#284b63";
+  monthlyPayment.style.color = "white";
   totalSumPaid.innerText = `$ ${totalSum}`;
-  totalSumPaid.style.color = "#284b63";
+  totalSumPaid.style.color = "white";
   interestPaid.innerText = `$ ${totalInterest}`;
-  interestPaid.style.color = "#284b63";
+  interestPaid.style.color = "white";
 }
