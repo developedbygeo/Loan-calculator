@@ -35,7 +35,7 @@ form {
   border-radius: 2rem;
   @include flex(flex-start, center, column);
   padding: 2rem;
-  background: rgba($color: $jet, $alpha: 0.015);
+  background: rgba($color: $jet, $alpha: 0.06);
 }
 
 .principal,

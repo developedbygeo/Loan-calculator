@@ -74,7 +74,7 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 2rem;
-  background: rgba(53, 53, 53, 0.015);
+  background: rgba(53, 53, 53, 0.06);
 }
 
 .principal,
