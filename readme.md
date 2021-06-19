@@ -2,6 +2,10 @@
 
 A simple, responsive, amortization loan calculator, using RegEx field validation to calculate the monthly payment, total interest and total amount to be paid.
 
+## Formula
+
+![alt text](https://www.gstatic.com/education/formulas2/355397047/en/amortization_calculator.svg)
+
 ## Usage
 
 Requires three fields:
