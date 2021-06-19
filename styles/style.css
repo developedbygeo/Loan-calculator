@@ -135,7 +135,7 @@ form {
 .field input {
   order: 2;
   padding: 1rem 1.5rem;
-  border: none;
+  border: 0.5px solid #f0efeb;
   border-radius: 1rem;
   outline: none;
   transition: all 100ms ease;
